@@ -6,6 +6,7 @@ import {MdChevronLeft, MdChevronRight} from 'react-icons/md'
 
 const Row = ({title, fetchURL}) => {
     const [movies, setMovies] = useState([])
+    
 
     useEffect(()=>{
         axios.get(fetchURL).then((response)=>{
