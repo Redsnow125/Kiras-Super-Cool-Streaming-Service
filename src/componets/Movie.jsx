@@ -17,6 +17,7 @@ const Movie = ({item}) => {
         if(user?.email){
             setLike(!like)
             setSaved(true)
+            console.log(movieID)
             await updateDoc(movieID,{
                 savedShows: arrayUnion({
                     id: item.id,
