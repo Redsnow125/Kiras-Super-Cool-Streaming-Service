@@ -1,4 +1,5 @@
 import React from 'react'
+import SavedShows from '../componets/SavedShows'
 
 const Account = () => {
   return (
@@ -16,6 +17,7 @@ const Account = () => {
           <h1 className='text-3xl md:text-5xl font-bold'>My Shows</h1>
         </div>
     </div>
+    <SavedShows/>
     </>
   )
 }

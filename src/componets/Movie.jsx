@@ -12,6 +12,7 @@ const Movie = ({item}) => {
     const {user} = UserAuth()
 
     const movieID = doc(db, 'users', `${user?.email}`)
+    console.log(movieID)
     
     const saveShow = async () => {
         if(user?.email){
@@ -19,11 +20,12 @@ const Movie = ({item}) => {
             setSaved(true)
             console.log(movieID)
             await updateDoc(movieID,{
-                savedShows: arrayUnion({
-                    id: item.id,
-                    title: item.title,
-                    img: item.backdrop_path
-                })
+                savedShows: "test"
+            //     savedShows: arrayUnion({
+            //         id: item.id,
+            //         title: item.title,
+            //         img: item.backdrop_path
+            // })
             })
         } else {
             alert("Please Login To Save Shows")
