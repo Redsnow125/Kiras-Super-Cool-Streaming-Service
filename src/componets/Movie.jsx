@@ -3,7 +3,7 @@ import { useState } from 'react'
 import {FaHeart, FaRegHeart} from 'react-icons/fa'
 import { UserAuth } from '../context/AuthContext'
 import { db } from './firebase'
-import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
+import { arrayUnion, doc,setDoc, updateDoc } from 'firebase/firestore'
 
 
 const Movie = ({item}) => {
@@ -19,13 +19,13 @@ const Movie = ({item}) => {
             setLike(!like)
             setSaved(true)
             console.log(movieID)
-            await updateDoc(movieID,{
-                savedShows: "test"
-            //     savedShows: arrayUnion({
-            //         id: item.id,
-            //         title: item.title,
-            //         img: item.backdrop_path
-            // })
+            await setDoc(doc(db, 'users', `${user?.email}`),{
+                // savedShows: "test"
+                savedShows: arrayUnion({
+                    id: item.id,
+                    title: item.title,
+                    img: item.backdrop_path
+            })
             })
         } else {
             alert("Please Login To Save Shows")
