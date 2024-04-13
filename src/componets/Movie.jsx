@@ -20,7 +20,6 @@ const Movie = ({item}) => {
             setSaved(true)
             console.log(movieID)
             await setDoc(doc(db, 'users', `${user?.email}`),{
-                // savedShows: "test"
                 savedShows: arrayUnion({
                     id: item.id,
                     title: item.title,
