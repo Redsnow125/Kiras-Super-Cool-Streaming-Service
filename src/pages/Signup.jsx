@@ -50,7 +50,7 @@ const Signup = () => {
                 <div className="flex justify-between items-center text-sm text-gray-600 cursor-pointer">
                   <p>
                     <input className="mr-2" type="checkbox" />
-                    Remember me
+                    Remember me please
                   </p>
                   <p>Need Help?</p>
                 </div>
